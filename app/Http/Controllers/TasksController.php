@@ -26,7 +26,9 @@ class TasksController extends Controller
      */
     public function create()
     {
-        //
+        $empty_task = new Task;
+        
+        return view('tasks.create', ['task' => $empty_task]);
     }
 
     /**
@@ -37,7 +39,11 @@ class TasksController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $new_task = new Task;
+        $new_task->content = $request->content;
+        $new_task->save();
+        
+        return redirect('/');
     }
 
     /**
