@@ -52,9 +52,11 @@ class TasksController extends Controller
      * @param  \App\Task  $task
      * @return \Illuminate\Http\Response
      */
-    public function show(Task $task)
+    public function show($id)
     {
-        return view('tasks.show', ['task' => $task]);
+        $target_task = Task::findOrFail($id);
+        
+        return view('tasks.show', ['task' => $target_task]);
     }
 
     /**
@@ -63,9 +65,11 @@ class TasksController extends Controller
      * @param  \App\Task  $task
      * @return \Illuminate\Http\Response
      */
-    public function edit(Task $task)
+    public function edit($id)
     {
-        return view('tasks.edit', ['task' => $task]);
+        $target_task = Task::findOrFail($id);
+        
+        return view('tasks.edit', ['task' => $target_task]);
     }
 
     /**
@@ -75,10 +79,11 @@ class TasksController extends Controller
      * @param  \App\Task  $task
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Task $task)
+    public function update(Request $request, $id)
     {
-        $task->content = $request->content;
-        $task->save();
+        $target_task = Task::findOrFail($id);
+        $target_task->content = $request->content;
+        $target_task->save();
         
         return redirect('/');
     }
@@ -89,9 +94,10 @@ class TasksController extends Controller
      * @param  \App\Task  $task
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Task $task)
+    public function destroy($id)
     {
-        $task->delete();
+        $target_task = Task::findOrFail($id);
+        $target_task->delete();
         
         return redirect('/');
     }

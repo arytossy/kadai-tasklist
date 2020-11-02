@@ -10,7 +10,7 @@
     <h3 class="text-secondary">-- ID：{{ $task->id }} --</h3>
     
     {!! Form::model($task, [
-            'route' => ['tasks.update', $task],
+            'route' => ['tasks.update', $task->id],
             'method' => 'put']) !!}
         <div class="form-group">
             {!! Form::label('content', 'タスク内容：') !!}
