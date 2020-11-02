@@ -10,6 +10,10 @@
     <h3 class="text-secondary">-- ID：{{ $task->id }} --</h3>
     <table class="table table-bordered">
         <tr>
+            <th>状況</th>
+            <td>{{ $task->status }}</td>
+        </tr>
+        <tr>
             <th>タスク内容</th>
             <td>{{ $task->content }}</td>
         </tr>
