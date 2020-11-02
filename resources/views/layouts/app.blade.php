@@ -15,6 +15,8 @@
         @include('commons.header')
         
         <div class="container mt-4">
+            @include('commons.error')
+            
             @yield('content')
         </div>
         
