@@ -13,7 +13,10 @@
             <ul class="navbar-nav mx-auto"></ul>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">リンク</a>
+                    {!! link_to_route('tasks.index', 'タスク一覧', null, ['class' => 'nav-link']) !!}
+                </li>
+                <li class="nav-item">
+                    {!! link_to_route('tasks.create', '新規作成', null, ['class' => 'nav-link']) !!}
                 </li>
             </ul>
         </div>

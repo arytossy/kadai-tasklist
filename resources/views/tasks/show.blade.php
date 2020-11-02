@@ -15,6 +15,8 @@
         </tr>
     </table>
     
+    {!! link_to_route('tasks.edit', '編集', $task->id, ['class' => 'btn btn-outline-secondary']) !!}
+    
     {!! Form::model($task, [
             'route' => ['tasks.destroy', $task->id],
             'method' => 'delete']) !!}

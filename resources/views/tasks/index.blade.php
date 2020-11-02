@@ -32,7 +32,7 @@
             <tbody>
                 @foreach ($tasks as $task)
                     <tr>
-                        <td>{{ $task->id }}</td>
+                        <td>{!! link_to_route('tasks.show', $task->id, $task->id, null) !!}</td>
                         <td>{{ $task->content }}</td>
                     </tr>
                 @endforeach
@@ -40,5 +40,7 @@
         </table>
         
     @endif
+    
+    {!! link_to_route('tasks.create', '新規作成', null, ['class' => 'btn btn-outline-secondary']) !!}
 
 @endsection
