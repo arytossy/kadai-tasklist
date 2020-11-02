@@ -14,5 +14,11 @@
             <td>{{ $task->content }}</td>
         </tr>
     </table>
+    
+    {!! Form::model($task, [
+            'route' => ['tasks.destroy', $task],
+            'method' => 'delete']) !!}
+        {!! Form::submit('削除', ['class' => 'btn btn-danger']) !!}
+    {!! Form::close() !!}
 
 @endsection
