@@ -23,7 +23,8 @@
     
     {!! Form::model($task, [
             'route' => ['tasks.destroy', $task->id],
-            'method' => 'delete']) !!}
+            'method' => 'delete',
+            'class' => 'd-inline-block']) !!}
         {!! Form::submit('削除', ['class' => 'btn btn-danger']) !!}
     {!! Form::close() !!}
 
