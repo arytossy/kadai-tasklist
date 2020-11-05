@@ -11,10 +11,11 @@ class TasksTableSeeder extends Seeder
      */
     public function run()
     {
-        for ($i = 1; $i <= 10; $i++) {
+        for ($i = 1; $i <= 100; $i++) {
             DB::table('tasks')->insert([
                 'status' => 'test',
-                'content' => 'test content' . $i
+                'content' => 'test content' . $i,
+                'user_id' => ($i % App\User::count()) + 1,
             ]);    
         }
     }

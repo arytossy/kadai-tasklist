@@ -40,6 +40,8 @@
             </tbody>
         </table>
         
+        {!! $tasks->links() !!}
+        
     @endif
     
     {!! link_to_route('tasks.create', '新規作成', null, ['class' => 'btn btn-outline-secondary']) !!}
