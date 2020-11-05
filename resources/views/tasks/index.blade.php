@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
     
     <h1 class="mb-3">
         <small class="mr-2"><i class="fas fa-check-square"></i></small>
